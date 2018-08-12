@@ -1,0 +1,22 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://",
+      "browser": "chrome"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js",
+    "HomePageObject": "./pages/HomePageObject.js",
+    "RegistrationPageObject": "./pages/RegistrationPageObject.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "tests": "./*_test.js",
+  "timeout": 100000,
+  "name": "applications"
+}
