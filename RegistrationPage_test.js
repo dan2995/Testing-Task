@@ -50,6 +50,20 @@ Feature('Registration Page');
 		I.see('"Postcode" is required.');
 	});
 
+	Scenario('Test Registration Page - Check for Field Validations', (I, RegistrationPageObject) => {
+        const invalid_user = getJSONObjectFromJSONFile("./testData/invalid_user_1.json");
+
+		//Assert for error message since fields were filled with invalid data
+        I.see('The form hasn\'t been completed properly. Please look again at the boxes marked as incorrect in the form.');
+        I.see('Username must be 5 to 25 characters long.');
+		I.see('Email address is not valid.');
+		I.see('Password needs to be a mix of letters and numbers.');
+		I.see('Please use only letters (a-z).');
+		I.see('Please enter a valid city of birth.');
+		I.see('Please use only letters, numbers and the following characters: space,/-\'..');
+		I.see('The field "Mobile phone" is empty or incorrect.');
+	});
+
 	function getJSONObjectFromJSONFile(filePath){
     	return require(filePath);
     };
