@@ -37,4 +37,4 @@ Commands used:
 To run the tests (should be run in the location where the RegistrationPage_test.js is found): codeceptjs run --steps
 To create the test class: codeceptjs gt
 To create page objects: codeceptjs gpo
-For the XML file to work: npm install xml2js
+For the reporting to work: npm install -g mocha, npm install -g mocha-junit-reporter
