@@ -1,0 +1,21 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Test Registration Page - Check for Field Validations",
+    "children" : [ {
+      "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+      "uid" : "ed383441c7a6495b",
+      "parentUid" : "2f258b1a4f77678daf55f13ea928c089",
+      "status" : "failed",
+      "time" : {
+        "start" : 1534186979000,
+        "stop" : 1534186979933,
+        "duration" : 933
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2f258b1a4f77678daf55f13ea928c089"
+  } ]
+}

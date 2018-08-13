@@ -1,0 +1,17 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+    "uid" : "ed383441c7a6495b",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1534186979000,
+      "stop" : 1534186979933,
+      "duration" : 933
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  } ]
+}

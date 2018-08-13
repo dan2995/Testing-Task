@@ -1,0 +1,11 @@
+[ {
+  "uid" : "ed383441c7a6495b",
+  "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+  "time" : {
+    "start" : 1534186979000,
+    "stop" : 1534186979933,
+    "duration" : 933
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

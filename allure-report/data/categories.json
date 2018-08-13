@@ -1,0 +1,25 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected web page to include \"The form hasn't been completed properly. Please look again at the boxes marked as incorrect in the form.\"",
+      "children" : [ {
+        "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+        "uid" : "ed383441c7a6495b",
+        "parentUid" : "7c5f89ad7c6197c24ac8e12d844e8d40",
+        "status" : "failed",
+        "time" : {
+          "start" : 1534186979000,
+          "stop" : 1534186979933,
+          "duration" : 933
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7c5f89ad7c6197c24ac8e12d844e8d40"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

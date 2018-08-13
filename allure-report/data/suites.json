@@ -1,0 +1,21 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Registration Page",
+    "children" : [ {
+      "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+      "uid" : "ed383441c7a6495b",
+      "parentUid" : "92803fcaab31028d975c086dd3a14feb",
+      "status" : "failed",
+      "time" : {
+        "start" : 1534186979000,
+        "stop" : 1534186979933,
+        "duration" : 933
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "92803fcaab31028d975c086dd3a14feb"
+  } ]
+}

@@ -1,0 +1,22 @@
+{
+  "Registration Page:Test Registration Page - Check for Field Validations#Registration Page: Test Registration Page - Check for Field Validations" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ed383441c7a6495b",
+      "status" : "failed",
+      "statusDetails" : "expected web page to include \"The form hasn't been completed properly. Please look again at the boxes marked as incorrect in the form.\"",
+      "time" : {
+        "start" : 1534186979000,
+        "stop" : 1534186979933,
+        "duration" : 933
+      }
+    } ]
+  }
+}

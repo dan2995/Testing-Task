@@ -1,0 +1,45 @@
+{
+  "uid" : "ed383441c7a6495b",
+  "name" : "Registration Page: Test Registration Page - Check for Field Validations",
+  "historyId" : "Registration Page:Test Registration Page - Check for Field Validations#Registration Page: Test Registration Page - Check for Field Validations",
+  "time" : {
+    "start" : 1534186979000,
+    "stop" : 1534186979933,
+    "duration" : 933
+  },
+  "status" : "failed",
+  "statusMessage" : "expected web page to include \"The form hasn't been completed properly. Please look again at the boxes marked as incorrect in the form.\"",
+  "statusTrace" : "expected web page to include \"The form hasn't been completed properly. Please look again at the boxes marked as incorrect in the form.\"\n\nScenario Steps:\n\n- I.see(\"The form hasn't been completed properly. Please look again at the boxes marked as incorrect in the form.\") at Object.obj.(anonymous function).obj.(anonymous function) [as see] (C:\\Users\\Catania\\AppData\\Roaming\\npm\\node_modules\\codeceptjs\\lib\\actor.js:28:26)\n\n",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "Registration Page"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Registration Page - Check for Field Validations"
+  }, {
+    "name" : "package",
+    "value" : "Test Registration Page - Check for Field Validations"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "ed383441c7a6495b.json",
+  "parameterValues" : [ ]
+}
