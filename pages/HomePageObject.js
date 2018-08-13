@@ -6,6 +6,7 @@ module.exports = {
     registerButtonViaPopUp: "//div[text()='Sign up now for free']",
     registerButton: "//span[text()='Register']",
     logoutButton: "//a[text()='Log out']",
+    personalDetailsButton: "//a[contains(text(), 'Personal Details')]",
 
     goToRegisterPageViaPopUp(){
         I.click(this.registerButtonViaPopUp);
@@ -19,4 +20,7 @@ module.exports = {
         I.click(this.registerButton);
     }
 
+    clickPersonalDetails(){
+        I.click(this.personalDetailsButton);
+    }
 }

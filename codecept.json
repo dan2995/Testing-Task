@@ -13,8 +13,8 @@
   },
   "mocha": {
     "reporterOptions": {
-        "mochaFile": "output/result.xml"
-    }
+      "mochaFile": "output/result.xml"
+   }
   },
   "bootstrap": false,
   "teardown": null,

@@ -7,13 +7,29 @@ Feature('Registration Page');
 		I.retry({retries: 3, minTimeout: 5000}).see('Open an Account now');
 	});
 
-	Scenario('Test Registration Page - Success', (I, RegistrationPageObject) => {
+	Scenario('Test Registration Page - Success', (I, RegistrationPageObject, HomePageObject) => {
 		const user_success = getJSONObjectFromJSONFile("./testData/valid_user_1.json");
 		RegistrationPageObject.registerUser(user_success);
 
 		//Make sure that user was logged in with newly created user
 		I.see('Logged in as: ' + user_success.firstName + ' ' + user_success.lastName);
 		I.see('Log out');
+
+		//Make sure details of registered user match those which were specified
+        HomePageObject.clickPersonalDetails();
+        I.see(user_success.username);
+        I.see(user_success.title);
+        I.see(user_success.firstName);
+        I.see(user_success.lastName);
+        I.see(user_success.dateOfBirthDay + '.01.' + user_success.dateOfBirthYear);
+        I.see(user_success.email);
+        I.see(user_success.streetAndHouseNo);
+        I.see(user_success.postcode);
+        I.see(user_success.countryOfBirth);
+        I.see(user_success.city);
+        I.see(user_success.nationality);
+        I.see(user_success.cityOfBirth);
+        I.see(user_success.mobilePhone);
 	});
 
 	Scenario('Test Registration Page - Register Duplicate User', (I, RegistrationPageObject, HomePageObject) => {
