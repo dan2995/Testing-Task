@@ -34,7 +34,17 @@ from the test scenario, referring to it by path.
 
 Commands used: 
 
-To run the tests (should be run in the location where the RegistrationPage_test.js is found): codeceptjs run --steps
 To create the test class: codeceptjs gt
 To create page objects: codeceptjs gpo
-For the reporting to work: npm install -g mocha, npm install -g mocha-junit-reporter
+For the reporting to work (xml report): npm install -g mocha, npm install -g mocha-junit-reporter
+For the reporting to work (allure report which uses xml report): scoop install allure after installing scoop and powershell >= 3
+
+To run: 
+
+To run the tests (should be run in the location where the RegistrationPage_test.js is found): codeceptjs run --reporter mocha-junit-reporter
+To run allure report (make sure you have xml report in './output'): allure serve /path/to/project/output/
+
+References:
+
+https://codecept.io/
+https://docs.qameta.io/allure/latest/#_report_structure
