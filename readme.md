@@ -36,7 +36,7 @@ file from the test scenario, referring to it by path.
 
 Commands used: 
 
--> To create the test class: codeceptjs gt
+-> To create the test class: codeceptjs gt \n
 -> To create page objects: codeceptjs gpo
 -> For the reporting to work (xml report): npm install -g mocha, npm install -g mocha-junit-reporter
 -> For the reporting to work (allure report which uses xml report): scoop install allure after installing scoop and powershell version >= 3
