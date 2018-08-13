@@ -92,7 +92,6 @@ module.exports = {
         this.fillContactDetails(userData);
         this.tickCheckboxes(userData);
 		this.clickStoreDetails();
-		pause();
  	},
 
  	registerUserr(userData){
