@@ -8,7 +8,7 @@ Feature('Registration Page');
 	});
 
 	Scenario('Test Registration Page - Success', (I, RegistrationPageObject) => {
-		const user_success = getJSONObjectFromJSONFile("./testData/user_success.json");
+		const user_success = getJSONObjectFromJSONFile("./testData/valid_user_1.json");
 		RegistrationPageObject.registerUser(user_success);
 
 		//Make sure that user was logged in with newly created user
@@ -17,7 +17,7 @@ Feature('Registration Page');
 	});
 
 	Scenario('Test Registration Page - Register Duplicate User', (I, RegistrationPageObject, HomePageObject) => {
-		const duplicate_user = getJSONObjectFromJSONFile("./testData/duplicate_user.json");
+		const duplicate_user = getJSONObjectFromJSONFile("./testData/valid_user_2.json");
 
 		//Create first user & make sure user is logged in
 		RegistrationPageObject.registerUser(duplicate_user);

@@ -49,20 +49,16 @@ module.exports = {
   	fillUserDetails(userDetails){
 		// If title passed is 'Mr' no need to do anything since this is the default selected value; however, if title is Ms/Mrs, we need to select it
 		if(userDetails.title === "Ms/Mrs"){
-	  		I.uncheckOption(this.userDetails.titleMsMrs);
+	  		I.checkOption(this.userDetails.titleMsMrs);
 		}
 		I.fillField(this.userDetails.firstName, userDetails.firstName);
 		I.fillField(this.userDetails.lastName, userDetails.lastName);
 		I.selectOption(this.userDetails.dateOfBirthYear, userDetails.dateOfBirthYear);
 		I.selectOption(this.userDetails.dateOfBirthMonth, userDetails.dateOfBirthMonth);
-		//Tentative Fix - doing it only once is not working for some odd reason, trying both the retry and retry checking for error is not working either
 		I.selectOption(this.userDetails.dateOfBirthDay, userDetails.dateOfBirthDay);
-        I.selectOption(this.userDetails.dateOfBirthDay, userDetails.dateOfBirthDay);
-        I.selectOption(this.userDetails.dateOfBirthDay, userDetails.dateOfBirthDay);
         I.selectOption(this.userDetails.nationality, userDetails.nationality);
 		I.selectOption(this.userDetails.countryOfBirth, userDetails.countryOfBirth);
 		I.fillField(this.userDetails.cityOfBirth, userDetails.cityOfBirth);
-
     },
   
   	fillContactDetails(contactDetails){
@@ -75,10 +71,10 @@ module.exports = {
   	tickCheckboxes(checkboxes){
 		//Since by default these checkboxes are unticked, tick only if user passes true
 		if(checkboxes.promotionalEmails === true){
-			I.uncheckOption(this.checkboxes.promotionalEmails);
+			I.checkOption(this.checkboxes.promotionalEmails);
 		}
 		if(checkboxes.receiveNewsletter === true){
-			I.uncheckOption(this.checkboxes.receiveNewsletter);
+			I.checkOption(this.checkboxes.receiveNewsletter);
 		}
   	},
 
