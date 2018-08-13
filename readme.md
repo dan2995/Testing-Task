@@ -11,11 +11,12 @@ to define fields and methods related to these pages. With regards to test data, 
 each test (scenario) would have its own JSON file to represent the user being created in that particular test. 
 
 In the test class (RegistrationPage_test.js), one can find a Before method which executes before each test scenario to execute the common code for all scenarios.
-Then, one can find 3 scenarios; 'Test Registration Page - Success', 'Test Registration Page - Register Duplicate User' and 
-'Test Registration Page - Check for Field Validations Required'. In the first scenario, I am testing the success path - the path where all fields are valid
-and I assert that after registration, the application logs in with the correct user just registered. In the second scenario, I am testing that the system 
-does not allow duplicate users to register since the username must be unique. In the final scenario, I am testing that if one tries to leave the required
-fields empty, the system shows that these fields are required. 
+Then, one can find 3 scenarios; 'Test Registration Page - Success', 'Test Registration Page - Register Duplicate User',  
+'Test Registration Page - Check for Field Validations Required' and 'Test Registration Page - Check for Field Validations'. In the first scenario, I am testing
+the success path - the path where all fields are valid and I assert that after registration, the application logs in with the correct user just registered and
+that the personal details match those that the user registered with. In the second scenario, I am testing that the system does not allow duplicate users to
+register since the username must be unique. In the third scenario, I am testing that if one tries to leave the required fields empty, the system shows that
+these fields are required. In the final scenario, I am testing that if invalid data is passed to the system, the respective UI validation errors are shown. 
 
 With regards to Page Objects, I have implemented two: HomePageObject.js and RegistrationPageObject.js (found at './pages'). In the HomePageObject, I have 
 implemented 3 methods: one to go to the registration page via the pop up which is shown when one goes to the tipico website and the other two click on the 
