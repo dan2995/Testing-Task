@@ -18,7 +18,7 @@ module.exports = {
 
     clickRegisterButton(){
         I.click(this.registerButton);
-    }
+    },
 
     clickPersonalDetails(){
         I.click(this.personalDetailsButton);

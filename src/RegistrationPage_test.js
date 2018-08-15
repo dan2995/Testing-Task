@@ -37,7 +37,7 @@ Feature('Registration Page');
 
 		//Create first user & make sure user is logged in
 		RegistrationPageObject.registerUser(duplicate_user);
-		I.see('Logged in as: ' + user_success.firstName + ' ' + user_success.lastName);
+		I.see('Logged in as: ' + duplicate_user.firstName + ' ' + duplicate_user.lastName);
 
 		//Go to registration page again and try to register another user with the same username
 		HomePageObject.clickLogoutButton();
@@ -49,7 +49,7 @@ Feature('Registration Page');
 		I.see('Username is taken, please choose another one.\n');
 	});
 
-	Scenario('Test Registration Page - Check for Field Validations Required', (I, RegistrationPageObject) => {
+	Scenario('Test Registration Page - Check for Required Field Validations', (I, RegistrationPageObject) => {
         RegistrationPageObject.clickStoreDetails();
 
         //Assert for error message since required fields were left empty
@@ -66,7 +66,7 @@ Feature('Registration Page');
 		I.see('"Postcode" is required.');
 	});
 
-	Scenario('Test Registration Page - Check for Field Validations', (I, RegistrationPageObject) => {
+	Scenario('Test Registration Page - Check for Invalid Field Validations', (I, RegistrationPageObject) => {
         const invalid_user = getJSONObjectFromJSONFile("./testData/invalid_user_1.json");
         RegistrationPageObject.registerUser(invalid_user);
 

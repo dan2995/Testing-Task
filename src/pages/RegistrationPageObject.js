@@ -56,6 +56,7 @@ module.exports = {
 		I.selectOption(this.userDetails.dateOfBirthYear, userDetails.dateOfBirthYear);
 		I.selectOption(this.userDetails.dateOfBirthMonth, userDetails.dateOfBirthMonth);
 		I.selectOption(this.userDetails.dateOfBirthDay, userDetails.dateOfBirthDay);
+        I.selectOption(this.userDetails.dateOfBirthDay, userDetails.dateOfBirthDay);
         I.selectOption(this.userDetails.nationality, userDetails.nationality);
 		I.selectOption(this.userDetails.countryOfBirth, userDetails.countryOfBirth);
 		I.fillField(this.userDetails.cityOfBirth, userDetails.cityOfBirth);
@@ -88,10 +89,5 @@ module.exports = {
         this.fillContactDetails(userData);
         this.tickCheckboxes(userData);
 		this.clickStoreDetails();
- 	},
-
- 	registerUserr(userData){
-        I.selectOption(this.userDetails.dateOfBirthDay, userData.dateOfBirthDay);
-        I.fillField(this.userDetails.cityOfBirth, userData.cityOfBirth);
-	}
+ 	}
 }

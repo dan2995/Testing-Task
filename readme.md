@@ -1,50 +1,65 @@
+Note: Please open this using notepad++ if you would like to see it with the correct formatting
+
 General Note:
 
 This solution was implemented as specified in the task description. For this solution, Codeceptjs and WebDriverIO were used together with selenium standalone
 using ChromeDriver. For reporting, I used mocha-junit-reporter as a tool to generate an XML report with the test results and Allure to provide a graphical
 representation of the test results.  
 
-The implementation: 
+The implementation (found in src folder) - explained: 
 
 This solution was implemented mainly in RegistrationPage_test.js. This Test Suite makes use of 2 Page Objects (HomePageObject.js and RegistrationPageObject.js) 
 to define fields and methods related to these pages. With regards to test data, this test suite reads JSON files from './testData' folder. It was decided that
 each test (scenario) would have its own JSON file to represent the user being created in that particular test. 
 
 In the test class (RegistrationPage_test.js), one can find a Before method which executes before each test scenario to execute the common code for all scenarios.
-Then, one can find 3 scenarios; 'Test Registration Page - Success', 'Test Registration Page - Register Duplicate User',  
-'Test Registration Page - Check for Field Validations Required' and 'Test Registration Page - Check for Field Validations'. In the first scenario, I am testing
-the success path - the path where all fields are valid and I assert that after registration, the application logs in with the correct user just registered and
-that the personal details match those that the user registered with. In the second scenario, I am testing that the system does not allow duplicate users to
-register since the username must be unique. In the third scenario, I am testing that if one tries to leave the required fields empty, the system shows that
-these fields are required. In the final scenario, I am testing that if invalid data is passed to the system, the respective UI validation errors are shown. 
+Then, one can find 4 scenarios; 'Test Registration Page - Success', 'Test Registration Page - Register Duplicate User',  
+'Test Registration Page - Check for Required Field Validations' and 'Test Registration Page - Check for Invalid Field Validations'. In the first scenario, I am
+testing the success path - the path where all fields are valid and I assert that after registration, the application logs in with the correct user just 
+registered and that the personal details match those that the user registered with. In the second scenario, I am testing that the system does not allow 
+duplicate users to register since the username must be unique. In the third scenario, I am testing that if one tries to leave the required fields empty, the 
+system shows that these fields are required. In the final scenario, I am testing that if invalid data is passed to the system, the respective UI validation 
+errors are shown. 
 
 With regards to Page Objects, I have implemented two: HomePageObject.js and RegistrationPageObject.js (found at './pages'). In the HomePageObject, I have 
-implemented 3 methods: one to go to the registration page via the pop up which is shown when one goes to the tipico website and the other two click on the 
-register button and on the logout buttons in the header of webpage. In the RegistrationPageObject, I have, first of all, split the fields locators into 
-sections which are like the sections of the webpage itself for maintainability, cleanliness and readability purposes. Moreover, I have implemented methods 
-which fill the sections of the registration page which take a JSON object as test data and fill in the respective section of the page with this test data; 
-I have split them into sections, again, for maintainability, cleanliness and readability purposes. Then, I have another method called registerUser() which 
-calls all the other methods so that in the test class, one would not have to call 5 methods but only one. 
+implemented 4 methods: one to go to the registration page via the pop up which is shown when one goes to the tipico website and the other three click on the 
+register button, on the logout button and on the personal details button in the header of webpage. In the RegistrationPageObject, I have, first of all, split 
+the fields locators into sections which are like the sections of the webpage itself for maintainability, cleanliness and readability purposes. Moreover, I have
+implemented methods which fill the sections of the registration page which take a JSON object as test data and fill in the respective section of the page with
+this test data; I have split them into sections, again, for maintainability, cleanliness and readability purposes. Then, I have another method called 
+registerUser() which calls all the other methods so that in the test class, one would not have to call 5 methods but only one. 
 
 One limitation of this implementation is that since the JSON file is fixed, tests which are executed more than once will not pass since a username should be 
 unique. Another way this could have been implemented would be to create a JSON file for each test on the fly with random data so that data will be unique,
 implying that the test could run for as many times as many as one likes. This is a more ideal way to be implemented but I thought it would be out of scope of
 this exercise to go into this level of detail/complexity. 
 
-In case one would like to test this out using his/her own JSON file, please create a valid JSON file with extension .json in './testData' folder and use the 
-file from the test scenario, referring to it by path. 
+The files found in this ZIP file - explained :
 
-The code:
+-> In the main dir, one can find:
+		--> 'allure-report' folder -- in this folder, one can find the data generated by Allure [please note that this was generated in Temp folder of the
+		windows user but was moved here if you would like to view it]
+		--> 'node_modules' folder -- folder generated by npm when installing packages 
+		--> 'src' folder 
+				---> 'output' folder -- one can find the XML report generated by mocha-junit-reporter and used by Allure
+				---> 'pages' folder -- one can find the Page Objects
+				---> 'testData' folder -- one can find the JSON files used by the tests as an external test data source
+				---> codecept.json -- file generated by codeceptjs with needed config
+				---> RegistrationPage_test.js -- the actual test suite 
+				---> steps.d, steps_file.js -- files generated by codeceptjs
+		--> package.json, package-lock.json -- files generated by npm
+		--> README.md (this file :))
+		--> strange_behaviour_1.gif -- if one looks closely into this gif, one can notice that the test selected the 'day' of the date of birth but then the
+		value selected vanishes and 'Day' is displayed once again (the default value of the dropdown) but the green tick (on the right hand side of the field)
+		is still shown, meaning that value that the test selected was processed and the the validation was done by the application but then for some strange
+		reason the value is lost [potential bug 1]
+		--> strange_behaviour_2.gif -- in this gif, the behaviour shown in strange_behaviour_1.gif was repeated but additionally, this behaviour was also
+		noticed on the 'City of birth' field - if one looks closely to this gif, the test wrote 'Rabat' in the 'City of birth' field but then the value
+		vanishes and the field became empty. However, the green tick (on the right hand side of the field) is still shown, meaning that value that the test 
+		wrote was processed (since this field is required - hence if it was empty, the green tick would not have been shown) and the the validation was done 
+		by the application but then for some strange reason the value is lost [potential bug 2]
 
-In the zip file uploaded on GitHub:
--> In the main dir, one can find (mainly) the RegistrationPage_test.js and codecept.json
--> In the 'pages' folder, one can find the Page Objects
--> In the 'testData' folder, one can find the JSON files used by the tests as an external test data source
--> In the 'output' folder, one can find the XML report generated by mocha-junit-reporter and used by Allure
--> In the 'allure-report' folder, one can find the data generated by Allure [please note that this was generated in Temp folder of the windows user but was
-   moved here if you would like to view it]
-
-Commands used: 
+Commands used during this solution: 
 
 -> To create the test class: codeceptjs gt 
 -> To create page objects: codeceptjs gpo
@@ -57,13 +72,14 @@ To run:
 -> To run the tests (should be run in the location where the RegistrationPage_test.js is found): codeceptjs run --reporter mocha-junit-reporter
 -> To run allure report (make sure you have xml report in './output' - should have been generated by the previous step): allure serve /path/to/project/output/
 
-Important Note: It is important to note that a strange behaviour was noted in the UI with the 'Date of Birth Day' dropdown and the 'City of Birth' field. As
-illustrated in the gif provided (bug2.gif - in the zip file), the test selects a day of date of birth and somehow this value vanishes but the 'green tick'
-is still shown on screen meaning that the validation was done but then something happens and value no longer appears but 'Day' is shown instead. Moreover,
-for 'City of Birth', the test types the value in the field but then it vanishes and an error "City of Birth is required" is shown. This might be a possible
-bug in the frontend of the application. Manually, I did not manage to replicate this but it seems that this only happens when the system is being used fast
-enough. This was replicated numerous time through automated tests [both on test & prod systems]. Due to this possible bug, tests sometimes fail since 
-registration is not successful.
+In case one would like to test this out using his/her own JSON file, please create a valid JSON file with extension .json in './testData' folder and use the 
+file from the test scenario, referring to it by path. 
+
+Important Note: It is very important to note that a strange behaviour was noted in the UI with the 'Date of Birth Day' dropdown and the 'City of Birth' fields
+(illustrated in strange_behaviour_1.gif & strange_behaviour_2.gif provided in this zip file and explained in the 'The files found in this ZIP file - explained'
+section). These might be potential bugs in the frontend of the application. Manually, I did not manage to replicate this but it seems that this only happens 
+when the system is being used fast enough. This was replicated numerous times through automated tests [both on test & prod systems]. Due to these possible bugs, 
+tests sometimes fail since registration is not successful.
 
 References:
 
